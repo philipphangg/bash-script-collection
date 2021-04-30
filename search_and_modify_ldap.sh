@@ -106,7 +106,7 @@ do
   done
 
   # Search another time, because on first search limit could be exceeded
-  FOUND_ENTRIES=$(ldapsearch -LLL -o ldif-wrap=no -z $SIZE_LIMIT -D $BIND_DN -w $BIND_PASSWORD -H $BIND_HOST -b $SEARCH_BASE $SEARCH_FILTER $SEARCH_ATTRIBUTES)
+  FOUND_ENTRIES=$(ldapsearch -LLL -o ldif-wrap=no -D $BIND_DN -w $BIND_PASSWORD -H $BIND_HOST -b $SEARCH_BASE $SEARCH_FILTER $SEARCH_ATTRIBUTES)
   if [ -z "$FOUND_ENTRIES"]
   then
     printf "Last search found nothing - All entries where changed\n"
